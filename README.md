@@ -1,6 +1,6 @@
-# chia-blockchain
+# pica-blockchain
 
-![Alt text](https://www.chia.net/img/chia_logo.svg)
+![Alt text]()
 
 | Current Release/main | Development Branch/dev |
 |         :---:          |          :---:         |

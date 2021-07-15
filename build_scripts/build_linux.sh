@@ -15,9 +15,9 @@ pip install setuptools_scm
 # The environment variable CHIA_INSTALLER_VERSION needs to be defined
 # If the env variable NOTARIZE and the username and password variables are
 # set, this will attempt to Notarize the signed DMG
-CHIA_INSTALLER_VERSION=$(python installer-version.py)
+PICACOINS_INSTALLER_VERSION=$(python installer-version.py)
 
-if [ ! "$CHIA_INSTALLER_VERSION" ]; then
+if [ ! "$PICACOINS_INSTALLER_VERSION" ]; then
 	echo "WARNING: No environment variable PICACOINS_INSTALLER_VERSION set. Using 0.0.0."
 	CHIA_INSTALLER_VERSION="0.0.0"
 	

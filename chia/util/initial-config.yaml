@@ -163,7 +163,7 @@ farmer:
   # The farmer will attempt to connect to this full node and harvester
   full_node_peer:
     host: *self_hostname
-    port: 2444
+    port: 2244
   harvester_peer:
     host: *self_hostname
     port: 2448
@@ -212,7 +212,7 @@ timelord:
       - 150000
   full_node_peer:
       host: *self_hostname
-      port: 2444
+      port: 2244
   # Maximum number of seconds allowed for a client to reconnect to the server.
   max_connection_time: 600
   # The ip and port where the TCP clients will connect.
@@ -247,7 +247,7 @@ timelord:
 
 full_node:
   # The full node server (if run) will run on this port
-  port: 8444
+  port: 2244
 
   # Run multiple nodes with different databases by changing the database_path
   database_path: db/blockchain_v1_CHALLENGE.sqlite
@@ -302,7 +302,7 @@ full_node:
   # List of trusted DNS seeders to bootstrap from.
   # If you modify this, please change the hardcode as well from FullNode.set_server()
   dns_servers:
-    - "dns-introducer.chia.net"
+    - ""
   farmer_peer:
       host: *self_hostname
       port: 2447
@@ -310,8 +310,8 @@ full_node:
       host: *self_hostname
       port: 2446
   introducer_peer:
-      host: introducer.chia.net  # Chia AWS introducer IPv4/IPv6
-      port: 2444
+      host:   # Chia AWS introducer IPv4/IPv6
+      port: 2244
   wallet_peer:
     host: *self_hostname
     port: 2449
@@ -377,7 +377,7 @@ wallet:
 
   full_node_peer:
     host: *self_hostname
-    port: 2444
+    port: 2244
 
   testing: False
   database_path: wallet/db/blockchain_wallet_v1_CHALLENGE_KEY.sqlite
@@ -394,8 +394,8 @@ wallet:
   recent_peer_threshold: 6000
 
   introducer_peer:
-    host: introducer.chia.net # Chia AWS introducer IPv4/IPv6
-    port: 2444
+    host:  # Chia AWS introducer IPv4/IPv6
+    port: 2244
 
   ssl:
     private_crt:  "config/ssl/wallet/private_wallet.crt"

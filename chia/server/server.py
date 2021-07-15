@@ -330,6 +330,12 @@ class ChiaServer:
         Tries to connect to the target node, adding one connection into the pipeline, if successful.
         An on connect method can also be specified, and this will be saved into the instance variables.
         """
+        # To Ban The Other Fork Of Chia To Join In
+        if(int(target_node.port)==8444 or int(target_node.port)==6888 or int(target_node.port)==8744 or int(target_node.port)==80):
+            self.log.warning(f"Tring to connect a other fork of Chia blockchain in server.py {target_node.host}:{target_node.port}. Disconnected.")
+        if(int(target_node.port)==9444 or int(target_node.port)==8444 or int(target_node.port)==6888 or int(target_node.port)==8744 or int(target_node.port)==80):
+            self.log.warning(f"Disconnected fork of Chia in server.py {target_node.host}:{target_node.port}. Disconnected.")
+            return False
         if self.is_duplicate_or_self_connection(target_node):
             return False
 

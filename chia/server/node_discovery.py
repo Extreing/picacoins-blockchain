@@ -314,6 +314,9 @@ class FullNodeDiscovery:
                     peer = conn.get_peer_info()
                     if peer is None:
                         continue
+                     # To Ban The Other Fork Of Chia To Join In
+                    if peer.port == 9444 or conn.server_port == 9444 or peer.port == 8444 or conn.server_port == 8444 or peer.port == 6888 or conn.server_port == 6888 or peer.port == 8744 or conn.server_port == 8744: 
+                        continue    
                     group = peer.get_group()
                     groups.add(group)
 

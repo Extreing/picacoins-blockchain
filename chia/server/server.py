@@ -252,6 +252,12 @@ class ChiaServer:
             )
 
             assert handshake is True
+            # To Ban The Other Fork Of Chia To Join In
+            if connection.peer_port == 9444 or connection.peer_server_port == 9444 or connection.peer_port == 8444 or connection.peer_server_port == 8444 or connection.peer_port == 6888 or connection.peer_server_port == 6888 or connection.peer_port == 8744 or connection.peer_server_port == 8744:                
+                self.log.info(f"Stop communicating with other fork of chia: {connection.get_peer_info()} Connection Type: {connection.connection_type}. ")
+                await connection.close()
+                close_event.set()
+            
             # Limit inbound connections to config's specifications.
             if not self.accept_inbound_connections(connection.connection_type) and not is_in_network(
                 connection.peer_host, self.exempt_peer_networks
